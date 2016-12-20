@@ -1,0 +1,6 @@
+ByteRange
+50 150
+ShortRange
+1000 2000
+LongRange
+3000 5000
