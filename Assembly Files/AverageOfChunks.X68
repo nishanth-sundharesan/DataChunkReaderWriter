@@ -260,8 +260,9 @@ DisplayLongString       dc.b    ' longs,average value ',0
 InputString01           dc.b    'Enter the section number between 1 and ',0
 InputString02           dc.b    ': ',0
 DecimalPoint            dc.b    '.',0
-BinaryData              INCBIN  "../DataChunkReaderWriter/DataChunkReaderWriter/OutputFiles/OutputBinaryFile.dat"
+BinaryData              INCBIN  "../C Files/DataChunkReaderWriter/OutputFiles/OutputBinaryFile.dat"
     END    START        ; last line of source
+
 
 
 
