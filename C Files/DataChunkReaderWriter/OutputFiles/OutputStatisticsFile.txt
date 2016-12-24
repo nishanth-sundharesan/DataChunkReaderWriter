@@ -1,0 +1,5 @@
+User chose 1 sections
+Section 1
+107 bytes, average value 101.50
+339 shorts, average value 1481.55
+487 longs, average value 4002.48
