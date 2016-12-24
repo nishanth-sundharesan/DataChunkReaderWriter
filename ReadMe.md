@@ -26,5 +26,23 @@ Section 35
 
 The assembly program will then be run and ask the user for a section number to use in its computations. The assembly program will spit out the averages for the three chunks in the section specified by the user. The values should match the text output given by the C program.
 
-This was part of the the assignment at FIEA.
+This was part of the assignment at FIEA.
 
+
+#### To run the program:
+
+1. Open the "DataChunkReaderWriter.sln" using Visual Studio.  
+2. Run the project and enter the number of sections(0 to 50).  
+3. Open the "OutputFiles\OutputStatisticsFile.txt" in a window.  
+4. Now open the assembly file "Assembly Files\AverageOfChunks.X68" and run it. Details about how to run the assembly program is mentioned below.  
+5. Enter a valid section number, whose data you would like to view.
+6. Now you can compare the number of pieces in each data chunk and its average value with the data present in "OutputStatisticsFile.txt" which you had previously opened.
+
+
+##### To run the assembly program:
+
+1. Please download the Easy68k Assembler/Editor/Simulator from "http://www.easy68k.com" (it is an assembler for 68000).
+2. Open "AverageOfChunks.X68" (it must open in Easy 68k).
+3. Hit play button, which is on the right side of the Menu bar (shortcut key: F9).
+4. Hit Execute button.
+5. Hit Play button again, this time it is the second button from left on the Menu bar.
