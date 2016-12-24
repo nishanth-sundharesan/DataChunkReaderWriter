@@ -49,7 +49,7 @@ int readSectionNumbers();
 #define FILENAME_OUTPUT_STAT_TO_WRITE "OutputFiles/OutputStatisticsFile.txt"
 #define FILENAME_OUTPUT_BINARY_TO_WRITE "OutputFiles/OutputBinaryFile.dat"
 
-//Config file range names
+//Range names in config file
 #define BYTE_RANGE "ByteRange"
 #define SHORT_RANGE "ShortRange"
 #define LONG_RANGE "LongRange"
@@ -130,7 +130,7 @@ int main(int argc, char* argv[])
 		randomSizeLongs = generateRandomNumbers(startSizeRange[2], endSizeRange[2]);
 
 		//Output the size of each section to the binary file.
-		unsigned int sizeOfSection = convertEndianFormat32BitsValue((randomSizeBytes % 2 == 1 ? randomSizeBytes + 1 : randomSizeBytes) +
+		unsigned int sizeOfSection = convertEndianFormat32BitsValue((randomSizeBytes % 2 == 1 ? randomSizeBytes + 1 : randomSizeBytes) +				////If the Random Size is ODD then add an additional padding of 1 byte to make the address as even number
 			(randomSizeShorts * sizeof(short)) + (randomSizeLongs*(sizeof(int)) + (sizeof(int) * NumberOfChunks)));
 		fwrite(&sizeOfSection, sizeof(int), 1, outputBinaryFileToWrite);
 
@@ -142,7 +142,7 @@ int main(int argc, char* argv[])
 		fprintf_s(outputStatFileToWrite, "\n%d longs, average value %.2f", randomSizeLongs, average);
 	}
 
-	//Closing file pointers
+	//Closing the file pointers
 	fclose(sizeRangeFileToRead);
 	fclose(valueRangeFileToRead);
 	fclose(outputStatFileToWrite);
@@ -336,7 +336,7 @@ void clearInputBuffer()
 *	Function: generateRandomNumbers
 *	-----------------------------------
 *	Description: Generates a random number between startSizeRange and endSizeRange
-*	Returns: Returns the generated Random number.
+*	Returns: Returns the generated random number.
 */
 int generateRandomNumbers(int startSizeRange, int endSizeRange)
 {
@@ -348,5 +348,4 @@ int generateRandomNumbers(int startSizeRange, int endSizeRange)
 	{
 		return (rand() % (endSizeRange - startSizeRange)) + startSizeRange;
 	}
-
 }

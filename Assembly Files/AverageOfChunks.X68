@@ -6,7 +6,7 @@
 *              as an input and computes the average for the
 *              Byte(Char) chunk, Word(Short) chunk and Long(Int)
 *              chunk for that particular section. It uses 
-*              the binary file outputted from the C prgoram. 
+*              the binary file outputted from the C prgoram.
 *
 *   Char = Byte
 *   Short = Word
@@ -64,9 +64,9 @@ INPUTAGAIN:
     TRAP    #15
         
     cmp.l   #0,d1                                ;Check if the entered section number is <=0
-    ble     INPUTAGAIN                           ;If yes, then get input again
+    ble     INPUTAGAIN                           ;If yes, then get the input again
     cmp.l   d7,d1                                ;Check if the entered section number is greater than the number of sections
-    bgt     INPUTAGAIN                           ;If yes, then get input again
+    bgt     INPUTAGAIN                           ;If yes, then get the input again
     
     move.l  d1,d7                                ;Save the section number    
     
@@ -88,7 +88,7 @@ INCREMENTSECTION:
             
 EXITSECTION:
     *-------------------------------------------------------------------------------------------------------------------------------------    
-    *Computing Average for Bytes    
+    *Computing the Average for Bytes    
     move.l  (a2)+,d3                             ;Load the number of bytes
     move.l  d3,d1
     jsr     DisplayNumber                        ;Displaying the number of bytes
@@ -117,7 +117,7 @@ ADDNEXTBYTE:
     add.l   d0,d4                                ;Sum up the numbers to compute the total
     dbra    d5,ADDNEXTBYTE
     
-    divu    d3,d4                                ;Divide total/numberofbytes to get average 
+    divu    d3,d4                                ;Divide total/numberofbytes to get the average 
 SKIPADDINGBYTES:   
     lea     DisplayByteString,a1                 ;Load the string into the address register a1 
     jsr     ComputeDisplayAverage
@@ -127,7 +127,7 @@ SKIPADDINGBYTES:
     jsr     GotoNewLine
     
     *-------------------------------------------------------------------------------------------------------------------------------------    
-    *Computing Average for Shorts/Words
+    *Computing the Average for Shorts/Words
     move.l  (a2)+,d3                             ;Load the number of words
     move.l  d3,d1
     jsr     DisplayNumber                        ;Displaying the number of words
@@ -146,7 +146,7 @@ ADDNEXTWORD:
     add.l   d0,d4                                ;Sum up the numbers to compute the total
     dbra    d5,ADDNEXTWORD
     
-    divu    d3,d4                                ;Divide total/numberofwords to get average
+    divu    d3,d4                                ;Divide total/numberofwords to get the average
 SKIPADDINGWORDS:    
     lea     DisplayShortString,a1                ;Load the string into the address register a1
     jsr     ComputeDisplayAverage
@@ -155,7 +155,7 @@ SKIPADDINGWORDS:
     jsr     GotoNewLine
     
     *-------------------------------------------------------------------------------------------------------------------------------------
-    *Computing Average for Longs
+    *Computing the Average for Longs
     move.l  (a2)+,d3                             ;Load the number of longs
     move.l  d3,d1
     jsr     DisplayNumber                        ;Displaying the number of longs
@@ -243,7 +243,7 @@ ComputeDisplayAverage
     move.l  d3,d5   
     lsr     #1,d5                                ;Divide the divisor by 2
     add.l   d5,d4                                ;Add it to the dividend
-    cmpi.l  #0,d3                                ;If the divisor is zero then skip divide
+    cmpi.l  #0,d3                                ;If the divisor is zero then skip the division
     beq     SKIPDIVIDE    
     divu    d3,d4                                ;Divide the dividend by the initial divisor, to get the fractional part       
     ext.l   d4                                   ;Get the quotient
@@ -261,7 +261,7 @@ InputString01           dc.b    'Enter the section number between 1 and ',0
 InputString02           dc.b    ': ',0
 DecimalPoint            dc.b    '.',0
 BinaryData              INCBIN  "../C Files/DataChunkReaderWriter/OutputFiles/OutputBinaryFile.dat"
-    END    START        ; last line of source
+    END    START
 
 
 
