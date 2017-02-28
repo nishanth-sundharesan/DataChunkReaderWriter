@@ -18,7 +18,7 @@ Section 1
 238 bytes, average value 101.73  
 401 shorts, average value 1487.25  
 104 longs, average value 4345.32  
- …  
+ â€¦  
 Section 35  
 123 bytes, average value 101.32  
 481 shorts, average value 1581.15  
@@ -39,7 +39,7 @@ This was part of the assignment at FIEA.
 6. Now you can compare the number of pieces in each data chunk and its average value with the data present in "OutputStatisticsFile.txt" which you had previously opened.
 
 
-##### To run the assembly program:
+#### To run the assembly program:
 
 1. Please download the Easy68k Assembler/Editor/Simulator from "http://www.easy68k.com" (it is an assembler for 68000).
 2. Open "AverageOfChunks.X68" (it must open in Easy 68k).
